@@ -1,7 +1,7 @@
 <?php
 include_once('connection.php');
 
-function addNewAdvertisement($name, $title){
+function addNewUser($name){
     $conn=connect();
     $sql="SELECT count(*) as db FROM `users-advertisements`.users;";
     $res = mysqli_query($conn, $sql);
@@ -13,7 +13,7 @@ function addNewAdvertisement($name, $title){
     $stmt = mysqli_prepare( $conn,"INSERT INTO `users-advertisements`.users (id, name) VALUES (?,?)");
 
 
-    mysqli_stmt_bind_param($stmt, 'ds', $countID, $name);
+    mysqli_stmt_bind_param($stmt, 'is', $countID, $name);
 
 mysqli_stmt_execute($stmt);
 

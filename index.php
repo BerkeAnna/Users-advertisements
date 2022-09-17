@@ -1,6 +1,6 @@
 <?php
 include_once('connection.php');
-include_once('addNewAd.php');
+include_once('addNewUser.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

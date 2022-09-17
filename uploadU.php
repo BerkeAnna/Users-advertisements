@@ -46,12 +46,16 @@ function uploadUser(){
     if(!$userIsExist) {
         $newUser = new addNewUser($this->name);
         $newUser->uploadNewUser();
-        $newAd = new addNewAdvertisement($this->name, $this->title);
-        $newAd->add();
-
+       $this->uploadAds();
+    }else {
+        $this->uploadAds();
     }
 
+}
 
+function uploadAds(){
+    $newAd = new addNewAdvertisement($this->name, $this->title);
+    $newAd->add();
 }
 
 

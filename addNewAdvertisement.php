@@ -46,7 +46,7 @@ class addNewAdvertisement
         for ($i=0; $i<count($names); $i++) {
             echo $names[$i] . ' ';
             if ($this->name == $names[$i]) {
-                $userID = $i + 1; 
+                $userID = $i + 1;
             }
         }
         echo 'USERID:' . $userID;

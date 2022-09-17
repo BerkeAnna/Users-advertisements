@@ -38,7 +38,7 @@ function addNewAdversitement($name, $title){
         $countID=$row["db"]+1;
     }
 
-    $stmt = mysqli_prepare( $conn,"INSERT INTO `users-advertisements`.advertisement (id,userid, title) VALUES (?,?,?)");
+    $stmt = mysqli_prepare( $conn,"INSERT INTO `users-advertisements`.advertisements (id,userid, title) VALUES (?,?,?)");
 
 
 $userID=5;

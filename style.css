@@ -7,6 +7,12 @@ h1, p, label{
     font-family: "Segoe Print";
 }
 
+h2{
+    color: black;
+    font-family: "Segoe Print";
+    text-align: center;
+}
+
 
 header{
     /*background: #ff9C7A;*/
@@ -97,5 +103,23 @@ input[type=text] {
 form{
     text-align: center;
     vertical-align: middle;
+
 }
 
+table{
+    background: #ffd7c8;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 1200px;
+}
+
+
+th{
+    background: #fd773d;
+    border-radius: 0px 30px 0px ;
+}
+td{
+    text-align: center;
+}

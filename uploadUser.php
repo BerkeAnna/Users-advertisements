@@ -30,6 +30,8 @@ for ($i=0; $i<count($names); $i++){
         $userIsExist=true;
     }
 }
+
+
 //ha false akkor meghívja
 if(!$userIsExist) {
     addNewUser($name);

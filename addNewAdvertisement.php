@@ -15,7 +15,7 @@ function addNewAdversitement($name, $title){
 //tömmbe rakja a neveket
     while ($row = mysqli_fetch_assoc($resUser) ) {
         array_push($names, $row['name']);
-        array_push($uID, $row['id']);
+//        array_push($uID, $row['id']);
     }
 
     $userIsExist=false;
@@ -23,10 +23,11 @@ function addNewAdversitement($name, $title){
     for ($i=0; $i<count($names); $i++){
         echo $names[$i] . ' ';
         if($name == $names[$i]){
-            $userID=$uID[$i];
+            $userID=$i+1;
         }
     }
 
+    echo '----userid: '. $userID;
 
 
 
@@ -38,12 +39,10 @@ function addNewAdversitement($name, $title){
         $countID=$row["db"]+1;
     }
 
-    $stmt = mysqli_prepare( $conn,"INSERT INTO `users-advertisements`.advertisements (id,userid, title) VALUES (?,?,?)");
+    $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id,userid, title) VALUES (?,?,?)");
 
-
-$userID=5;
 //TODO: the next row, the $title is not good.
-    mysqli_stmt_bind_param($stmt, 'iis', $countID, $userID, $title);
+    mysqli_stmt_bind_param($stmt, 'iis', $countID,$userID, $title);
 
     mysqli_stmt_execute($stmt);
 

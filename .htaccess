@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^index$ index.php?page=index&%{QUERY_STRING}
+RewriteRule ^users$ index.php?page=users&%{QUERY_STRING}
+RewriteRule ^advertisements$ index.php?page=advertisements&%{QUERY_STRING}

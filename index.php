@@ -1,6 +1,13 @@
 <?php
 include_once('connection.php');
 include_once('addNewUser.php');
+
+$page = "";
+if (isset($_GET['page']))
+    $page = $_GET['page'];
+//else
+   // header("Location: index.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,23 +17,37 @@ include_once('addNewUser.php');
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php
+switch($page) {
+    case "index": include("index.php"); break;
+    case "users": include("users.php"); break;
+    case "advertisements": include("advertisements.php"); break;
+
+}
+?>
 
 
     <nav>
         <ul>
             <ol>
-                <a href="index.php">INDEX</a>
+                <div <?php echo $page == "index" ? "kijelolt" : "" ?>">
+                <a href="index">INDEX</a>
             </ol>
             <ol>
-                <a href="users.php">USERS</a>
+                <div <?php echo $page == "users" ? "kijelolt" : "" ?>">
+                <a href="users">USERS</a>
             </ol>
             <ol>
-                <a href="advertisements.php">ADVERTISEMENTS</a>
+                <div <?php echo $page == "advertisements" ? "kijelolt" : "" ?>">
+                <a href="advertisements">ADVERTISEMENTS</a>
             </ol>
         </ul>
     </nav>
 
     <main>
+
+
+
         <h2>Add your advertisement:</h2>
         <form method="post" action="uploadUser.php">
             <label>Username:</label></br>

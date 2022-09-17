@@ -7,5 +7,5 @@ create table if not exists advertismenets(
     id int primary key not null,
     userid int not null,
     title varchar(60) not null,
-    foreign key userid references users(id)
+    foreign key (userid) references users(id)
 );

@@ -25,7 +25,7 @@ function addNewAdversitement($name, $title){
         }
     }
 
-    echo '----userid: '. $userID;
+    echo '---in add-userid: '. $userID;
 
 
 
@@ -37,10 +37,10 @@ function addNewAdversitement($name, $title){
         $countID=$row["db"]+1;
     }
 
-    $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id,userid, title) VALUES (?,?,?)");
+    $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id, title) VALUES (?,?)");
 
 //TODO: the next row, the $title is not good.
-    mysqli_stmt_bind_param($stmt, 'iis', $countID,$userID, $title);
+    mysqli_stmt_bind_param($stmt, 'is', $countID, $title);
 
     mysqli_stmt_execute($stmt);
 

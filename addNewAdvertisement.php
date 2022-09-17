@@ -35,6 +35,7 @@ class addNewAdvertisement
 
         $names=array();
         $uID=array();
+        $userID=0;
 
         while ($row = mysqli_fetch_assoc($resUser) ) {
             array_push($names, $row['name']);
@@ -45,10 +46,10 @@ class addNewAdvertisement
         for ($i=0; $i<count($names); $i++) {
             echo $names[$i] . ' ';
             if ($this->name == $names[$i]) {
-                $userID = $i + 2; // +1 for the for() and +1 for the index increment
+                $userID = $i + 1; 
             }
         }
-
+        echo 'USERID:' . $userID;
         return $userID;
     }
 
@@ -56,9 +57,9 @@ class addNewAdvertisement
         $conn=$this->connect();
         $userID=$this->searchUserId();
         $countID=$this->countNewId();
-        $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id,userid, title) VALUES (?,?,?)");
+        $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id, userid, title) VALUES (?,?,?)");
 
-        mysqli_stmt_bind_param($stmt, 'iis', $countID,$userID, $title);
+        mysqli_stmt_bind_param($stmt, 'iis', $countID, $userID, $this->title);
 
         mysqli_stmt_execute($stmt);
     }

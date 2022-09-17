@@ -1,6 +1,7 @@
 <?php
 require_once ('connect.php');
 require_once ('addNewUser.php');
+require_once ('addNewAdvertisement.php');
 class uploadU
 {
 
@@ -45,9 +46,11 @@ function uploadUser(){
     if(!$userIsExist) {
         $newUser = new addNewUser($this->name);
         $newUser->uploadNewUser();
+        $newAd = new addNewAdvertisement($this->name, $this->title);
+        $newAd->add();
+
     }
 
-//    addNewAdversitement($this->name, $this->title);
 
 }
 

@@ -1,7 +1,7 @@
 <?php
 include_once('usersList.php');
 include_once('connection.php');
-include_once('addNewUser.php');
+include_once('addNewUsernotclass.php');
 ?>
 
 <!DOCTYPE html>

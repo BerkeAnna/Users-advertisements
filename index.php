@@ -1,6 +1,6 @@
 <?php
 include_once('connection.php');
-include_once('addNewUser.php');
+include_once('addNewUsernotclass.php');
 
 $page = "";
 if (isset($_GET['page']))
@@ -18,28 +18,28 @@ if (isset($_GET['page']))
 </head>
 <body>
 <?php
-switch($page) {
-    case "index": include("index.php"); break;
-    case "users": include("users.php"); break;
-    case "advertisements": include("advertisements.php"); break;
-
-}
-?>
+//switch($page) {
+//    case "index": include("index.php"); break;
+//    case "users": include("users.php"); break;
+//    case "advertisements": include("advertisements.php"); break;
+//
+//}
+//?>
 
 
     <nav>
         <ul>
             <ol>
-                <div <?php echo $page == "index" ? "kijelolt" : "" ?>">
-                <a href="index">INDEX</a>
+<!--                <div --><?php //echo $page == "index" ? "kijelolt" : "" ?><!--">-->
+                <a href="index.php">INDEX</a>
             </ol>
             <ol>
-                <div <?php echo $page == "users" ? "kijelolt" : "" ?>">
-                <a href="users">USERS</a>
+<!--                <div --><?php //echo $page == "users" ? "kijelolt" : "" ?><!--">-->
+                <a href="users.php">USERS</a>
             </ol>
             <ol>
-                <div <?php echo $page == "advertisements" ? "kijelolt" : "" ?>">
-                <a href="advertisements">ADVERTISEMENTS</a>
+<!--                <div --><?php //echo $page == "advertisements" ? "kijelolt" : "" ?><!--">-->
+                <a href="advertisements.php">ADVERTISEMENTS</a>
             </ol>
         </ul>
     </nav>

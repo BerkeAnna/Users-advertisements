@@ -1,49 +1,69 @@
 <?php
-include_once('connection.php');
 
-function addNewAdversitement($name, $title){
-    $conn=connect();
+class addNewAdvertisement
+{
+    public $name;
+    public $title;
 
-    $userID=0;
-    $sqlUser = 'SELECT id, name FROM `users-advertisements`.users';
-    //$sqlUserId = 'SELECT id FROM `users-advertisements`.users';
-    $resUser = mysqli_query($conn, $sqlUser);
-//    $resUserId = mysqli_query($conn, $sqlUserId);
-
-    $names=array();
-    $uID=array();
-//tömmbe rakja a neveket
-    while ($row = mysqli_fetch_assoc($resUser) ) {
-        array_push($names, $row['name']);
-//        array_push($uID, $row['id']);
+    public function __construct($username, $adtitle){
+        $this->name=$username;
+        $this->title=$adtitle;
     }
 
-    $userIsExist=false;
-//ha nincs a tömmben false maard
-    for ($i=0; $i<count($names); $i++){
-        echo $names[$i] . ' ';
-        if($name == $names[$i]){
-            $userID=$i+1;
+    function connect(){
+        $connectionClass= new connect();
+        $connection= $connectionClass->connect();
+        return $connection;
+    }
+
+    function countNewId(){
+        $conn=$this->connect();
+        $sql="SELECT count(*) as db FROM `users-advertisements`.advertisements;";
+        $res = mysqli_query($conn, $sql);
+
+        while ($row = mysqli_fetch_assoc($res) ) {
+            echo 'db: ' . $row["db"];
+            $countID=$row["db"]+1;
         }
+        return $countID;
     }
 
-    echo '----userid: '. $userID;
+    function searchUserId(){
+        $conn=$this->connect();
+        $sqlUser = 'SELECT id, name FROM `users-advertisements`.users';
+        $resUser = mysqli_query($conn, $sqlUser);
 
+        $names=array();
+        $uID=array();
 
+        while ($row = mysqli_fetch_assoc($resUser) ) {
+            array_push($names, $row['name']);
+            array_push($uID, $row['id']);
+        }
 
-    $sql="SELECT count(*) as db FROM `users-advertisements`.users";
-    $res = mysqli_query($conn, $sql);
+        $userIsExist=false;
+        for ($i=0; $i<count($names); $i++) {
+            echo $names[$i] . ' ';
+            if ($this->name == $names[$i]) {
+                $userID = $i + 2; // +1 for the for() and +1 for the index increment
+            }
+        }
 
-    while ($row = mysqli_fetch_assoc($res) ) {
-        echo 'db: ' . $row["db"];
-        $countID=$row["db"]+1;
+        return $userID;
     }
 
-    $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id,userid, title) VALUES (?,?,?)");
+    public function add(){
+        $conn=$this->connect();
+        $userID=$this->searchUserId();
+        $countID=$this->countNewId();
+        $stmt = mysqli_prepare( $conn,"insert into `users-advertisements`.advertisements(id,userid, title) VALUES (?,?,?)");
 
-//TODO: the next row, the $title is not good.
-    mysqli_stmt_bind_param($stmt, 'iis', $countID,$userID, $title);
+        mysqli_stmt_bind_param($stmt, 'iis', $countID,$userID, $title);
 
-    mysqli_stmt_execute($stmt);
+        mysqli_stmt_execute($stmt);
+    }
+
+
+
 
 }

@@ -1,7 +1,5 @@
 <?php
-include_once('usersList.php');
-include_once('connection.php');
-include_once('addNewUsernotclass.php');
+require_once('connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +7,7 @@ include_once('addNewUsernotclass.php');
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../view/style.css">
 </head>
 <body>
 
@@ -17,7 +15,7 @@ include_once('addNewUsernotclass.php');
 <nav>
     <ul>
         <ol>
-            <a href="index.php">INDEX</a>
+            <a href="../index.php">INDEX</a>
         </ol>
         <ol>
             <a href="users.php">USERS</a>
@@ -33,7 +31,11 @@ include_once('addNewUsernotclass.php');
 
 
     <?php
-
+    function connect(){
+        $connectionClass= new connection();
+        $connection= $connectionClass->connection();
+        return $connection;
+    }
 
 
     $conn=connect();

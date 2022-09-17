@@ -1,5 +1,5 @@
 <?php
-include_once('connection.php');
+require_once('connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ include_once('connection.php');
 <head>
     <meta charset="UTF-8">
     <title>Advertisements</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../view/style.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@ include_once('connection.php');
 <nav>
     <ul>
         <ol>
-            <a href="index.php">INDEX</a>
+            <a href="../index.php">INDEX</a>
         </ol>
         <ol>
             <a href="users.php">USERS</a>
@@ -30,6 +30,12 @@ include_once('connection.php');
 <main>
 
     <?php
+    function connect(){
+        $connectionClass= new connection();
+        $connection= $connectionClass->connection();
+        return $connection;
+    }
+
     $conn=connect();
 
     $sql="SELECT * FROM `users-advertisements`.users left join `users-advertisements`.advertisements on `users-advertisements`.advertisements.userid = `users-advertisements`.users.id";

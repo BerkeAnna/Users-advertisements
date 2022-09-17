@@ -1,5 +1,5 @@
 <?php
-require_once ('uploadU.php');
+require_once('model/uploadU.php');
 
 $name = $_POST['username'];
 $title = $_POST['title'];

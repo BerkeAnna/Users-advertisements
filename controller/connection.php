@@ -1,8 +1,8 @@
 <?php
 
-class connect
+class connection
 {
-    function connect()
+    function connection()
     {
         $conn = mysqli_connect('localhost', 'root', 'berkeanna');
         return $conn;

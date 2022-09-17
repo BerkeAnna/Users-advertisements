@@ -1,6 +1,5 @@
 <?php
-include_once('connection.php');
-include_once('addNewUsernotclass.php');
+include_once('controller/connection.php');
 
 $page = "";
 if (isset($_GET['page']))
@@ -14,32 +13,32 @@ if (isset($_GET['page']))
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="view/style.css">
 </head>
 <body>
 <?php
-//switch($page) {
-//    case "index": include("index.php"); break;
-//    case "users": include("users.php"); break;
-//    case "advertisements": include("advertisements.php"); break;
-//
-//}
-//?>
+switch($page) {
+    case "index": include("index.php"); break;
+    case "users": include("controller/users.php"); break;
+    case "advertisements": include("controller/advertisements.php"); break;
+
+}
+?>
 
 
     <nav>
         <ul>
             <ol>
-<!--                <div --><?php //echo $page == "index" ? "kijelolt" : "" ?><!--">-->
-                <a href="index.php">INDEX</a>
+                <div <?php echo $page == "index" ? "kijelolt" : "" ?>">
+                <a href="index">INDEX</a>
             </ol>
             <ol>
-<!--                <div --><?php //echo $page == "users" ? "kijelolt" : "" ?><!--">-->
-                <a href="users.php">USERS</a>
+                <div <?php echo $page == "users" ? "kijelolt" : "" ?>">
+                <a href="controller/users">USERS</a>
             </ol>
             <ol>
-<!--                <div --><?php //echo $page == "advertisements" ? "kijelolt" : "" ?><!--">-->
-                <a href="advertisements.php">ADVERTISEMENTS</a>
+                <div <?php echo $page == "advertisements" ? "kijelolt" : "" ?>">
+                <a href="controller/advertisements">ADVERTISEMENTS</a>
             </ol>
         </ul>
     </nav>

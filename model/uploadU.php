@@ -1,7 +1,7 @@
 <?php
-require_once ('connect.php');
-require_once ('addNewUser.php');
-require_once ('addNewAdvertisement.php');
+require_once('connection.php');
+require_once('addNewUser.php');
+require_once('addNewAdvertisement.php');
 class uploadU
 {
 
@@ -15,8 +15,8 @@ class uploadU
     }
 
 function connect(){
-    $ConnectionClass= new connect();
-    $Connection= $ConnectionClass->connect();
+    $ConnectionClass= new connection();
+    $Connection= $ConnectionClass->connection();
     return $Connection;
 }
 

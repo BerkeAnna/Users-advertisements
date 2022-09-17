@@ -11,8 +11,8 @@ class addNewAdvertisement
     }
 
     function connect(){
-        $connectionClass= new connect();
-        $connection= $connectionClass->connect();
+        $connectionClass= new connection();
+        $connection= $connectionClass->connection();
         return $connection;
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once ('connect.php');
+require_once ('connection.php');
 class addNewUser
 {
     public $name;
@@ -10,8 +10,8 @@ class addNewUser
 }
 
     function connect(){
-        $connectionClass= new connect();
-        $connection= $connectionClass->connect();
+        $connectionClass= new connection();
+        $connection= $connectionClass->connection();
         return $connection;
     }
 

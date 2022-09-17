@@ -36,7 +36,6 @@ include_once('addNewUsernotclass.php');
 
 
 
-    $stid= usersList();
     $conn=connect();
 
     $sql="SELECT * FROM `users-advertisements`.users;";

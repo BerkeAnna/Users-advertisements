@@ -22,9 +22,11 @@ class addNewAdvertisement
         $res = mysqli_query($conn, $sql);
 
         while ($row = mysqli_fetch_assoc($res) ) {
-            echo 'db: ' . $row["db"];
-            $countID=$row["db"]+1;
+            echo 'db: ' . $row['db'];
+            $countID=$row['db']+1;
         }
+
+        echo 'COUNTID:' . $countID;
         return $countID;
     }
 

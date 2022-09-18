@@ -1,6 +1,6 @@
 <?php
 
-require_once ('connection.php');
+require_once ('controller/connection.php');
 class addNewUser
 {
     public $name;

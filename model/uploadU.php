@@ -1,7 +1,7 @@
 <?php
-require_once('connection.php');
-require_once('addNewUser.php');
-require_once('addNewAdvertisement.php');
+require_once('controller/connection.php');
+require_once('model/addNewUser.php');
+require_once('model/addNewAdvertisement.php');
 class uploadU
 {
 
@@ -46,9 +46,13 @@ function uploadUser(){
     if(!$userIsExist) {
         $newUser = new addNewUser($this->name);
         $newUser->uploadNewUser();
-       $this->uploadAds();
+//       $this->uploadAds();
+        $newAd = new addNewAdvertisement($this->name, $this->title);
+        $newAd->add();
     }else {
-        $this->uploadAds();
+//        $this->uploadAds();
+        $newAd = new addNewAdvertisement($this->name, $this->title);
+        $newAd->add();
     }
 
 }

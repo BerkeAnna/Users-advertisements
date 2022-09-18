@@ -38,7 +38,7 @@ require_once('connection.php');
 
     $conn=connect();
 
-    $sql="SELECT * FROM `users-advertisements`.users left join `users-advertisements`.advertisements on `users-advertisements`.advertisements.userid = `users-advertisements`.users.id";
+    $sql="SELECT title, name FROM `users-advertisements`.users left join `users-advertisements`.advertisements on `users-advertisements`.advertisements.userid = `users-advertisements`.users.id";
         $res = mysqli_query($conn, $sql);
 
         echo '<table border=1>';

@@ -8,6 +8,9 @@ $upload = new uploadU($name,  $title);
 
 $upload->uploadUser();
 
+header("Location: index.php");
+
+//ez controller
 
 
 ?>

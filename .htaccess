@@ -1,5 +1,16 @@
 RewriteEngine On
+#
+#RewriteRule ^index$ index.php?page=index&%{QUERY_STRING}
+#RewriteRule ^users$ index.php?page=users&%{QUERY_STRING}
+#RewriteRule ^advertisements$ index.php?page=advertisements&%{QUERY_STRING}
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule index index.php
+RewriteRule users controller/users.php
+RewriteRule advertisements controller/advertisements.php
 
-RewriteRule ^index$ index.php?page=index&%{QUERY_STRING}
-RewriteRule ^users$ index.php?page=users&%{QUERY_STRING}
-RewriteRule ^advertisements$ index.php?page=advertisements&%{QUERY_STRING}
+#<IfModule mod_rewrite.c >
+#RewriteEngine On
+#RewriteCond %{SCRIPT_FILENAME} !-d
+#RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteRule ^(.*)$ ./index.php?q=$1 [L,QSA]
+#</IfModule>

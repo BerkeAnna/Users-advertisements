@@ -1,5 +1,5 @@
 <?php
-require_once('connection.php');
+require_once dirname( __DIR__ ) . '/controller/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ require_once('connection.php');
 <head>
     <meta charset="UTF-8">
     <title>Advertisements</title>
-    <link rel="stylesheet" href="../view/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 

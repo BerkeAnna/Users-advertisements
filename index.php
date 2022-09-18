@@ -20,8 +20,8 @@ if (isset($_GET['page']))
 <?php
 switch($page) {
     case "index": include("index.php"); break;
-    case "users": include("controller/users.php"); break;
-    case "advertisements": include("controller/advertisements.php"); break;
+    case "users": include("view/users.php"); break;
+    case "advertisements": include("view/advertisements.php"); break;
 
 }
 

@@ -4,8 +4,7 @@ include_once('controller/connection.php');
 $page = "";
 if (isset($_GET['page']))
     $page = $_GET['page'];
-//else
-// header("Location: index.php");
+
 
 
 ?>
@@ -52,7 +51,7 @@ switch ($page) {
 
 
     <h2>Add your advertisement:</h2>
-    <form method="post" action="/controller/callUserC.php">
+    <form method="post" action="uploadUser.php">
         <label>Username:</label></br>
         <input type="text" id="username" name="username"></br>
         <label>Advertisement title:</label></br>

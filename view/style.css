@@ -1,32 +1,32 @@
-body{
+body {
     background: #eeddd6;
 }
 
-h1, p, label{
+h1, p, label {
     color: black;
     font-family: "Segoe Print";
 }
 
-h2{
+h2 {
     color: black;
     font-family: "Segoe Print";
     text-align: center;
 }
 
 
-header{
+header {
     /*background: #ff9C7A;*/
     background: #ec7052;
     width: 100%;
     text-align: center;
     right: 0;
     /*top: 0;*/
-    padding: 10px 10px ;
+    padding: 10px 10px;
     /*margin: 10px;*/
     /*border-radius: 0 0 20px 20px;*/
 }
 
-main{
+main {
     background: #eeddd6;
 
     /*background: linear-gradient(180deg,#f6a588, #eeddd6 );*/
@@ -40,29 +40,32 @@ main{
 
 }
 
-nav{
+nav {
     /*background: #f6a588;*/
-    background: linear-gradient(180deg,#ec7052, #eeddd6 );
+    background: linear-gradient(180deg, #ec7052, #eeddd6);
     width: 15%;
     height: 140%;
     position: absolute;
-    left:0;
+    left: 0;
     border-radius: 0px 0px 20px 20px;
     font-size: 20px;
 
 }
-nav ol{
+
+nav ol {
     padding-top: 15px;
 }
-nav ol:hover{
+
+nav ol:hover {
     background: #fff5f5;
     width: 80%;
     color: #5e0909;
     font-weight: bold;
-    border-radius: 0px 50px 0px ;
+    border-radius: 0px 50px 0px;
 
 }
-a{
+
+a {
     font-size: 25px;
     text-align: center;
     font-family: "Segoe Print";
@@ -77,36 +80,36 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     /*border-radius: 0px 30px 0px ;*/
-    border-radius:  30px  ;
+    border-radius: 30px;
 }
 
-.button{
+.button {
     background: #e86445;
     color: #000000;
     padding: 15px 32px;
     text-align: center;
-    border-radius:  30px  ;
+    border-radius: 30px;
     margin-top: 40px;
     border: none;
 }
 
-.button:hover{
+.button:hover {
     background: #943302;
     color: #000000;
     padding: 15px 32px;
     text-align: center;
-    border-radius:  30px  ;
+    border-radius: 30px;
     margin-top: 40px;
     border: none;
 }
 
-form{
+form {
     text-align: center;
     vertical-align: middle;
 
 }
 
-table{
+table {
     background: #ffd7c8;
     border-radius: 20px 20px 20px 20px;
     margin-left: auto;
@@ -116,10 +119,11 @@ table{
 }
 
 
-th{
+th {
     background: #fd773d;
-    border-radius: 0px 30px 0px ;
+    border-radius: 0px 30px 0px;
 }
-td{
+
+td {
     text-align: center;
 }

@@ -1,7 +1,7 @@
 <?php
 
 require_once ('controller/connection.php');
-class addNewUser
+class user
 {
     public $name;
 

@@ -5,17 +5,20 @@ class dataController
 
     public $sql;
 
-    public function __construct($sql){
-        $this->sql=$sql;
+    public function __construct($sql)
+    {
+        $this->sql = $sql;
     }
 
-    public function connect(){
-        $connectionClass= new connection();
-        $connection= $connectionClass->connection();
+    public function connect()
+    {
+        $connectionClass = new connection();
+        $connection = $connectionClass->connection();
         return $connection;
     }
 
-    public function sql(){
+    public function sql()
+    {
         return $this->sql;
     }
 

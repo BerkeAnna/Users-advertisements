@@ -1,6 +1,7 @@
 <?php
 require_once('model/uploadU.php');
 require_once('controller/userController.php');
+require_once('index.php');
 
 $name = $_POST['username'];
 $title = $_POST['title'];

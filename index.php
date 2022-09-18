@@ -18,45 +18,46 @@ if (isset($_GET['page']))
 </head>
 <body>
 <?php
-switch($page) {
-    case "index": include("index.php"); break;
-    case "users": include("view/users.php"); break;
-    case "advertisements": include("view/advertisements.php"); break;
+switch ($page) {
+    case "index":
+        include("index.php");
+        break;
+    case "users":
+        include("view/users.php");
+        break;
+    case "advertisements":
+        include("view/advertisements.php");
+        break;
 
 }
 
-//print_r($_REQUEST);
 ?>
 
-
+<header>
 <nav>
     <ul>
         <ol>
-            <div <?php echo $page == "index" ? "kijelolt" : "" ?>">
             <a href="index">INDEX</a>
         </ol>
         <ol>
-            <div <?php echo $page == "users" ? "kijelolt" : "" ?>">
-            <a href="controller/users">USERS</a>
+            <a href="view/users">USERS</a>
         </ol>
         <ol>
-            <div <?php echo $page == "advertisements" ? "kijelolt" : "" ?>">
-            <a href="controller/advertisements">ADVERTISEMENTS</a>
+            <a href="view/advertisements">ADVERTISEMENTS</a>
         </ol>
     </ul>
 </nav>
-
+</header>
 <main>
 
 
-
     <h2>Add your advertisement:</h2>
-    <form method="post" action="uploadUser.php">
+    <form method="post" action="/controller/callUserC.php">
         <label>Username:</label></br>
         <input type="text" id="username" name="username"></br>
         <label>Advertisement title:</label></br>
         <input type="text" id="title" name="title"></br>
-        <button class="button" type="submit"  >New Advertisement</button>
+        <button class="button" type="submit">New Advertisement</button>
     </form>
 </main>
 

@@ -1,67 +1,66 @@
 <?php
 require_once('controller/connection.php');
-require_once('model/addNewUser.php');
-require_once('model/addNewAdvertisement.php');
+require_once('model/User.php');
+require_once('model/Advertisement.php');
+
 class uploadU
 {
 
     public $name;
     public $title;
 
-    public function __construct($cname, $ctitle){
+    public function __construct($cname, $ctitle)
+    {
         $this->name = $cname;
         $this->title = $ctitle;
 
     }
 
-    function connect(){
-        $ConnectionClass= new connection();
-        $Connection= $ConnectionClass->connection();
+    function connect()
+    {
+        $ConnectionClass = new connection();
+        $Connection = $ConnectionClass->connection();
         return $Connection;
     }
 
-    function uploadUser(){
-        $conn=$this->connect();
-        $sql = 'SELECT name FROM `users-advertisements`.users' ;
+    function uploadUser()
+    {
+        $conn = $this->connect();
+        $sql = 'SELECT name FROM `users-advertisements`.users';
         $res = mysqli_query($conn, $sql);
 
-        $names=array();
+        $names = array();
 //tömmbe rakja a neveket
-        while ($row = mysqli_fetch_assoc($res) ) {
+        while ($row = mysqli_fetch_assoc($res)) {
             array_push($names, $row['name']);
         }
 
-        $userIsExist=false;
-//ha nincs a tömmben false maard
-        for ($i=0; $i<count($names); $i++){
+        $userIsExist = false;
+
+        for ($i = 0; $i < count($names); $i++) {
             echo $names[$i] . ' ';
-            if($this->name == $names[$i]){
-                $userIsExist=true;
+            if ($this->name == $names[$i]) {
+                $userIsExist = true;
             }
         }
 
 
-//ha false akkor meghívja
-
-        if(!$userIsExist) {
-            $newUser = new addNewUser($this->name);
+        if (!$userIsExist) {
+            $newUser = new user($this->name);
             $newUser->uploadNewUser();
-//       $this->uploadAds();
-            $newAd = new addNewAdvertisement($this->name, $this->title);
-            $newAd->add();
-        }else {
-//        $this->uploadAds();
-            $newAd = new addNewAdvertisement($this->name, $this->title);
-            $newAd->add();
+            $this->uploadAds();
+
+        } else {
+            $this->uploadAds();
         }
 
     }
 
-    function uploadAds(){
-        $newAd = new addNewAdvertisement($this->name, $this->title);
+    function uploadAds()
+    {
+        $newAd = new advertisement($this->name, $this->title);
         $newAd->add();
     }
-
 
 
 }

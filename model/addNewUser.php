@@ -7,7 +7,7 @@ class addNewUser
 
     public function __construct($username){
         $this->name=$username;
-}
+    }
 
     function connect(){
         $connectionClass= new connection();

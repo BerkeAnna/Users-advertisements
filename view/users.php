@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__DIR__) . '/controller/connection.php';
+require_once dirname(__DIR__) . '/controller/dataController.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,16 +32,12 @@ require_once dirname(__DIR__) . '/controller/connection.php';
 
 
     <?php
-    function connect(){
-        $connectionClass= new connection();
-        $connection= $connectionClass->connection();
-        return $connection;
-    }
 
+    $sql_code="SELECT * FROM `users-advertisements`.users";
+    $usersCon= new dataController($sql_code);
+    $sql=$usersCon->sql();
+    $conn=$usersCon->connect();
 
-    $conn=connect();
-
-    $sql="SELECT * FROM `users-advertisements`.users;";
 
         $res = mysqli_query($conn, $sql);
 

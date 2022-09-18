@@ -6,8 +6,8 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule index index.php
-RewriteRule users controller/users.php
-RewriteRule advertisements controller/advertisements.php
+RewriteRule users view/users.php
+RewriteRule advertisements view/advertisements.php
 
 
 #<IfModule mod_rewrite.c >

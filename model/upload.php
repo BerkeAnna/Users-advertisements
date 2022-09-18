@@ -1,9 +1,9 @@
 <?php
 require_once('controller/connection.php');
-require_once('model/User.php');
-require_once('model/Advertisement.php');
+require_once('model/user.php');
+require_once('model/advertisement.php');
 
-class uploadU
+class upload
 {
 
     public $name;

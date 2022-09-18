@@ -47,6 +47,8 @@ switch ($page) {
 
 <main>
 
+    <h2>The exist advertisement with owners</h2>
+
     <?php
     $sql_code = "SELECT title, name FROM `users-advertisements`.users left join `users-advertisements`.advertisements on `users-advertisements`.advertisements.userid = `users-advertisements`.users.id";
 

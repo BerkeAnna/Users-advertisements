@@ -1,0 +1,4 @@
+-the user can make a new advertisement with his username on the index page
+-the usernames are once in the database. If the user is exists, it won't store again.
+-the user can see the users on the users page
+-the user can see the advertisements with the owners on the advertisements page

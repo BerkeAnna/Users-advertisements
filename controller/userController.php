@@ -1,5 +1,5 @@
 <?php
-require_once('model/uploadU.php');
+require_once('model/upload.php');
 
 class userController
 {
@@ -10,7 +10,7 @@ class userController
         $this->name = $name;
         $this->title = $title;
 
-        $upload = new uploadU($this->name, $this->title);
+        $upload = new upload($this->name, $this->title);
         $upload->uploadUser();
 
     }

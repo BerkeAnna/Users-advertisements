@@ -46,7 +46,7 @@ switch ($page) {
 
 <main>
 
-
+    <h2>The exists users</h2>
     <?php
 
     $sql_code = "SELECT * FROM `users-advertisements`.users";
@@ -56,6 +56,7 @@ switch ($page) {
 
 
     $res = mysqli_query($conn, $sql);
+
 
     echo '<table border=1>';
     echo '<tr>';

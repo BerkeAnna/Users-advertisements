@@ -51,7 +51,7 @@ switch ($page) {
 
 
     <h2>Add your advertisement:</h2>
-    <form method="post" action="uploadUser.php">
+    <form method="post" action="newUploadDatas.php">
         <label>Username:</label></br>
         <input type="text" id="username" name="username"></br>
         <label>Advertisement title:</label></br>

@@ -30,7 +30,7 @@ class upload
         $res = mysqli_query($conn, $sql);
 
         $names = array();
-//tömmbe rakja a neveket
+
         while ($row = mysqli_fetch_assoc($res)) {
             array_push($names, $row['name']);
         }
